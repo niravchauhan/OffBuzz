@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>OffBuzz — Master</title>
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/master.css" />
+  </head>
+  <body>
+    <main class="master">
+      <aside class="side">
+        <section class="card">
+          <div class="brand">
+            <h1>OffBuzz</h1>
+            <span>Master</span>
+          </div>
+          <div class="topbar">
+            <span class="pill"><i class="dot" id="conn-dot"></i><span id="conn-text">Connecting…</span></span>
+            <span class="pill" id="count-pill">0 / 6 players</span>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Players join here</h2>
+          <div class="join-url" id="join-url">http://…:3000</div>
+          <img id="qr" alt="QR code with the player join URL" />
+          <p class="hint" id="ip-hint">
+            Phones must be on the same Wi-Fi hotspot as this device.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2>Connected players</h2>
+          <ul class="players" id="player-list"></ul>
+          <p class="empty" id="player-empty">No players yet — share the link above.</p>
+        </section>
+      </aside>
+
+      <section class="stage">
+        <div class="status" id="status">
+          <div class="label" id="status-label">Lobby</div>
+          <h2 class="headline" id="status-headline">Waiting for players</h2>
+          <div class="sub" id="status-sub">Open the buzzers when everyone is in.</div>
+        </div>
+
+        <div class="controls">
+          <button id="btn-open">Open Buzzers</button>
+          <button id="btn-reset">Reset Round</button>
+          <button id="btn-clear">Clear all players</button>
+        </div>
+      </section>
+    </main>
+
+    <audio id="buzzer" src="/sounds/buzzer.wav" preload="auto"></audio>
+    <div class="toast" id="toast"></div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/master.js"></script>
+  </body>
+</html>

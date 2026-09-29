@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#0b1020" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>OffBuzz — Player</title>
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/player.css" />
+  </head>
+  <body>
+    <main class="player">
+      <header class="top">
+        <span class="who" id="who">OffBuzz</span>
+        <span class="pill"><i class="dot" id="conn-dot"></i><span id="conn-text">Connecting…</span></span>
+      </header>
+
+      <!-- Step 1 -->
+      <section class="gate" id="gate">
+        <h1>Enter your name</h1>
+        <p>You need a name before the buzzer appears. Max 20 characters.</p>
+        <input
+          id="name-input"
+          type="text"
+          inputmode="text"
+          autocomplete="off"
+          autocapitalize="words"
+          maxlength="20"
+          placeholder="e.g. Nirav"
+        />
+        <button id="btn-join">Join game</button>
+      </section>
+
+      <!-- Step 2 -->
+      <section class="stage hidden" id="stage">
+        <div class="state-line" id="state-line">Waiting for the host…</div>
+        <button id="buzz" disabled>WAIT</button>
+        <div class="footer-note" id="footer-note">Keep this screen open.</div>
+        <button class="link-btn" id="btn-change-name" type="button">Not you? Change name</button>
+      </section>
+    </main>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/player.js"></script>
+  </body>
+</html>

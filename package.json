@@ -1,0 +1,26 @@
+{
+  "name": "offbuzz",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Offline LAN multiplayer buzz-in quiz app (Express + Socket.IO)",
+  "main": "server/index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "make-sound": "node scripts/make-buzzer.js",
+    "smoke": "node scripts/smoke-test.js",
+    "test:network": "node scripts/test-network.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "qrcode": "^1.5.4",
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "socket.io-client": "^4.8.1"
+  }
+}
